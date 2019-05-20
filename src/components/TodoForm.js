@@ -17,7 +17,7 @@ function TodoForm(props) {
 
   function registNewTodo(event) {
     event.preventDefault();
-    const apiUrl = "http://localhost:8080/todo";
+    const apiUrl = "https://gren-todo-api.herokuapp.com/todo";
     let form = event.target;
     const {title, content, priority, deadline} = form.elements;
     const newTodo = {};

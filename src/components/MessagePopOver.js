@@ -10,7 +10,7 @@ function MessagePopOver() {
   const Min = 60 * 1000;
 
   const getAllTodos = function() {
-    axios("http://localhost:8080/todos")
+    axios("https://gren-todo-api.herokuapp.com/todos")
       .then(res => res.data)
       .then(todos => {
         setRenderedTitle(renderTitles(todos));

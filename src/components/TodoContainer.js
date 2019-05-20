@@ -9,7 +9,7 @@ function TodoContainer() {
   const [todos, setTodos] = useState(null);
 
   const getAllTodos = function() {
-    axios("http://localhost:8080/todos")
+    axios("https://gren-todo-api.herokuapp.com/todos")
       .then(res => res.data)
       .then(res => setTodos(res));
   }

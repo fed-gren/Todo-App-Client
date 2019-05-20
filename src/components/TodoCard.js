@@ -66,7 +66,7 @@ function TodoCard(props) {
   }
 
   function deleteTodoCard() {
-    const apiUrl = `http://localhost:8080/todo/${todoId}`;
+    const apiUrl = `https://gren-todo-api.herokuapp.com/todo/${todoId}`;
     axios.delete(apiUrl).catch(function(error) {
       console.log(error);
     });
@@ -96,7 +96,7 @@ function TodoCard(props) {
 
   function toggleTodoStatus() {
     todoStatus = todoStatus === "TODO" ? "DONE" : "TODO";
-    const apiUrl = `http://localhost:8080/todo/${todoId}`;
+    const apiUrl = `https://gren-todo-api.herokuapp.com/todo/${todoId}`;
     const updateTodo = {};
     updateTodo.status = todoStatus;
 
