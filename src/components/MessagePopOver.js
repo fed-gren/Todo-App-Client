@@ -17,28 +17,29 @@ function MessagePopOver() {
       });
   };
 
-  function checkExcedeed({title, deadline, status}) {
-    if(!deadline) return false;
-    if(status === "DONE") return false;
+  function checkExcedeed({ title, deadline, status }) {
+    if (!deadline) return false;
+    if (status === "DONE") return false;
     let nowTime = new Date().getTime();
     let deadlineTime = new Date(deadline).getTime();
-    if(nowTime > deadlineTime) return title;
+    if (nowTime > deadlineTime) return title;
     else return false;
   }
 
   function renderTitles(todos) {
     if (todos === null) return;
-    const titles = todos.filter(todo => {
-      return checkExcedeed(todo);
-    })
-    .map((todo, index) => {
-      const { title: todoTitle } = todo;
-      return (
-        <div className="out_of_date" key={index}>
-          {todoTitle}
-        </div>
-      );
-    });
+    const titles = todos
+      .filter(todo => {
+        return checkExcedeed(todo);
+      })
+      .map((todo, index) => {
+        const { title: todoTitle } = todo;
+        return (
+          <div className="out_of_date" key={index}>
+            {todoTitle}
+          </div>
+        );
+      });
     setNumOfMessage(titles.length);
     return titles;
   }
@@ -48,7 +49,7 @@ function MessagePopOver() {
     setInterval(() => {
       getAllTodos();
     }, Min);
-  }, []);
+  }, [Min, getAllTodos]);
 
   const popover = (
     <Popover id="popover-basic" title="일정 지난 Todo">
@@ -66,7 +67,9 @@ function MessagePopOver() {
       >
         <FaBell className="alarm" />
       </OverlayTrigger>
-      <div className="count_messages">{numOfMessage}</div>
+      <div className="count_messages">
+        <p>{numOfMessage}</p>
+      </div>
     </section>
   );
 }
