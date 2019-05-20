@@ -11,6 +11,7 @@ function TodoCard(props) {
   // const [todoDone, toggleStatus] = useState(false);
   const [cardOpened, toggleCard] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [titleHtml, setTitleHtml] = useState("");
   let parsedDate = "기한 : ";
   const checker = useRef(null);
   const checkFlag = useRef(null);
@@ -106,7 +107,7 @@ function TodoCard(props) {
 
   useEffect(() => {
     setCardStatus();
-  }, [setCardStatus]);
+  }, []);
 
   return (
     <>
