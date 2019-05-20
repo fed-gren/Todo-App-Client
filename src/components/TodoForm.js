@@ -46,7 +46,7 @@ function TodoForm(props) {
   function getEditTodoValues() {
     async function fetchData() {
       await axios
-        .get(`http://localhost:8080/todo/${props.editTodoId}`)
+        .get(`https://gren-todo-api.herokuapp.com/todo/${props.editTodoId}`)
         .then(res => res.data)
         .then(res => setTodo(res));
     }
