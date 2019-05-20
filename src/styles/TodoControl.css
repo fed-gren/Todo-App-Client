@@ -1,0 +1,54 @@
+.todo_control_container {
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.todo_control_left {
+  flex-grow: 0;
+  width: 6.3rem;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 .7rem; */
+  align-items: center;
+}
+
+.section_alarm {
+  text-align: center;
+  display: inline-block;
+}
+
+.section_button_newTodo {
+  text-align: left;
+  display: inline-block;
+}
+
+.section_guide_message {
+  flex-grow: 1;
+  text-align: center;
+  border: 1px solid black;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alarm {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.alarm:hover {
+  color: gray;
+}
+
+.button_newTodo {
+  box-shadow: 0 0.1rem;
+}
+
+.button_newTodo:active{
+  transform:translateY(0.1rem);
+}

@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1rem;
+}
+
+header {
+  margin: 0;
+}

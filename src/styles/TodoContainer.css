@@ -1,0 +1,6 @@
+.todo_card_container {
+  width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+  flex:1;
+}
